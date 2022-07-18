@@ -21,7 +21,7 @@ FFTR_INLINE fix15_t abs_fix15(const fix15_t x)
 }
 
 // ----------------------------------------------------------------------------
-FFTR_INLINE fix15_t mul_fix15(fix15_t a, fix15_t b)
+FFTR_INLINE fix15_t mul_fix15(const fix15_t a, const fix15_t b)
 {
   return (fix15_t)(((int64_t)(a) * (int64_t)(b)) >> 15);
 }

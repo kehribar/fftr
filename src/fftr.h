@@ -27,13 +27,13 @@
 typedef int32_t fix15_t;
 
 // ----------------------------------------------------------------------------
-FFTR_INLINE fix15_t float_to_fix15(float a)
+FFTR_INLINE fix15_t float_to_fix15(const float a)
 {
   return (fix15_t)(a * 32767.0f);
 }
 
 // ----------------------------------------------------------------------------
-FFTR_INLINE float fix15_to_float(fix15_t a)
+FFTR_INLINE float fix15_to_float(const fix15_t a)
 {
   return (float)(a) / 32767.0f;
 }
