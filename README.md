@@ -8,11 +8,14 @@ Input and output values are in 16.15 fixed point format.
 If you are on a desktop / embedded linux environment, you should probably use <https://www.fftw.org/> but this library can be useful for various MCU based embedded applications.
 
 ## Configuration
-* Change FFTR_SIZE and corresponding FFTR_SIZE_LOG2 value for your desired FFT size.
+* Change `FFTR_SIZE` and corresponding `FFTR_SIZE_LOG2` value inside `fftr.h` for your desired FFT size.
+  - This must be power of 2
 
 ## Remember
 * If you have 256 point FFT, you will have 128 point magnitude information.
-* Conversion formula for output index to frequency is: `F_SAMPLING * (N / (FFT_SIZE / 2)) ` where `N` is the bin number and `F_SAMPLING` is the sampling frequency.
+* If your sampling frequency is 10kHz, your highest output bin will represent 5kHz. 
+  - See <https://en.wikipedia.org/wiki/Nyquist_frequency>
+* Conversion formula for output index to frequency is: `F_SAMPLING * (N / FFT_SIZE)) ` where `N` is the bin number and `F_SAMPLING` is the sampling frequency.
 * Zeroth index represent DC component.
 
 ## Usage
